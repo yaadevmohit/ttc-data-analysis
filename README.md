@@ -1,23 +1,24 @@
-Welcome to the sample GitHub ReadME! Use this template as an outline for your data analytics projects. Include one ReadME per repository, with each repository storing one project. Remember, it's better to have quality over quantity - having 2 stellar business-relevant projects stands out much more than 3+ mediocre projects. Feel free to make a copy of this or fork this repository and make it your own. Happy portfolio-ing :) 
-
+Welcome to the TTC data analysis ReadME!
 
 
 
 # Project Background
-Backround about the company, including the industry, active years, business model, and key business metrics. Explain this from the POV of a data analyst who is working at the company.
+The Toronto Transit Commission (TTC) operates one of the most heavily used public transit networks in North America, delivering hundreds of millions of passenger trips annually across its subway, streetcar, and bus systems. Maintaining schedule reliability, operational efficiency, and rider satisfaction requires continuous monitoring of service disruptions, mechanical incidents, and peak-hour network bottlenecks.
 
-Insights and recommendations are provided on the following key areas:
+This project analyzes historical TTC operational and delay data to identify core service patterns, evaluate transit reliability across routes and transit modes, and diagnose key drivers of delays. Using SQL for data extraction and data hygiene, Python for exploratory data analysis, and Power BI for interactive reporting, this analysis transforms raw operational logs into actionable operational insights for transit planners, operations teams, and stakeholders.
 
-- **Category 1:** 
-- **Category 2:** 
-- **Category 3:** 
-- **Category 4:** 
+Key Focus Areas & analytical scope:
+
+- **Delay Frequency & Severity:** Quantifying total delay hours, frequency across peak vs. off-peak hours, and identifying recurring root cause codes (e.g., mechanical issues, operator delays, track incidents).
+- **Route & Station Hotspots:** Pinpointing lines, surface routes, and stations with the highest concentration of service disruptions.
+- **Temporal & Seasonal Patterns:** Analyzing day-of-week, time-of-day, and month-over-month incident trends.
+- **Actionable Transit Optimization::** Formulating data-driven recommendations to improve maintenance dispatching, optimize headway adherence, and reduce overall commuter wait times.
 
 The SQL queries used to inspect and clean the data for this analysis can be found here [link].
 
-Targed SQL queries regarding various business questions can be found here [link].
+Targeted SQL queries regarding various business questions can be found here [link].
 
-An interactive Tableau dashboard used to report and explore sales trends can be found here [link].
+An interactive Power BI dashboard used to report and explore sales trends can be found here [link].
 
 
 
