@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "ttc-data-analysis"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5b537b3f-bbbf-459c-94b1-4c46fc318b23"
+  }
+}

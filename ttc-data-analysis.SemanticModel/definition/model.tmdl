@@ -1,0 +1,23 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-CA
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Delay Data after 2025","Code Descriptions","Delay Data 2024"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Delay Data after 2025'
+ref table DateTableTemplate_144d7701-7bec-4681-849e-0f37c3408a71
+ref table LocalDateTable_cebcff8b-c479-4c6d-9b2e-e9cb42713e81
+ref table 'Code Descriptions'
+ref table 'Delay Data 2024'
+ref table LocalDateTable_916980bc-1319-4045-9432-01e3b7749183
+
+ref cultureInfo en-US
+

@@ -1,0 +1,127 @@
+table 'Delay Data after 2025'
+	lineageTag: 1a2a5e91-09c2-4f7b-9a9a-102da7ff01d6
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ff4163f2-c36f-4947-87d3-8c0015cdee77
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 0c3a1d3b-1ba1-4de7-be14-7a89a5173618
+			defaultHierarchy: LocalDateTable_cebcff8b-c479-4c6d-9b2e-e9cb42713e81.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: fa940896-1670-414f-b75e-612cfb0debfe
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column Day
+		dataType: string
+		lineageTag: 6c38ea6d-cf0c-4808-892b-90d17e013c1d
+		summarizeBy: none
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column Station
+		dataType: string
+		lineageTag: bffa2a16-8275-4be8-80f6-1f06580d4c6b
+		summarizeBy: none
+		sourceColumn: Station
+
+		annotation SummarizationSetBy = Automatic
+
+	column Code
+		dataType: string
+		lineageTag: 6e5ce63b-b86c-48de-b783-d4e0d35d4b90
+		summarizeBy: none
+		sourceColumn: Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Min Delay'
+		dataType: int64
+		formatString: 0
+		lineageTag: 489e8b09-ac92-4d67-96b8-0eb7957fcbb0
+		summarizeBy: sum
+		sourceColumn: Min Delay
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Min Gap'
+		dataType: int64
+		formatString: 0
+		lineageTag: c3d0e50d-63df-4482-8a18-aa9373d968b3
+		summarizeBy: sum
+		sourceColumn: Min Gap
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bound
+		dataType: string
+		lineageTag: 9af44668-07fb-417c-a37e-156dc067891c
+		summarizeBy: none
+		sourceColumn: Bound
+
+		annotation SummarizationSetBy = Automatic
+
+	column Line
+		dataType: string
+		lineageTag: 13a8722a-330e-45b0-adfd-fd725573f2c5
+		summarizeBy: none
+		sourceColumn: Line
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vehicle
+		dataType: int64
+		formatString: 0
+		lineageTag: c2629fd1-9db4-465d-b8a7-81444719844a
+		summarizeBy: sum
+		sourceColumn: Vehicle
+
+		annotation SummarizationSetBy = Automatic
+
+	column Incident_id
+		dataType: string
+		lineageTag: dafb87be-28c2-43e4-8618-7494d7f8bba6
+		summarizeBy: none
+		sourceColumn: Incident_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Delay Data after 2025' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Mohit\Documents\ttc-data-analysis\assets\TTC Subway Delay Data since 2025.csv"),[Delimiter=",", Columns=11, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"_id", Int64.Type}, {"Date", type date}, {"Time", type time}, {"Day", type text}, {"Station", type text}, {"Code", type text}, {"Min Delay", Int64.Type}, {"Min Gap", Int64.Type}, {"Bound", type text}, {"Line", type text}, {"Vehicle", Int64.Type}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Year", each 2025),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Year", Int64.Type}}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Changed Type1",{"_id", "Year", "Date", "Time", "Day", "Station", "Code", "Min Delay", "Min Gap", "Bound", "Line", "Vehicle"}),
+				    #"Added Custom1" = Table.AddColumn(#"Reordered Columns", "Incident_id", each Text.From([Year]) & "-" & Text.From([_id])),
+				    #"Reordered Columns1" = Table.ReorderColumns(#"Added Custom1",{"_id", "Incident_id", "Year", "Date", "Time", "Day", "Station", "Code", "Min Delay", "Min Gap", "Bound", "Line", "Vehicle"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Reordered Columns1",{"Year", "_id"}),
+				    #"Appended Query" = Table.Combine({#"Removed Columns", #"Delay Data 2024"}),
+				    #"Sorted Rows" = Table.Sort(#"Appended Query",{{"Date", Order.Ascending}, {"Time", Order.Ascending}})
+				in
+				    #"Sorted Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

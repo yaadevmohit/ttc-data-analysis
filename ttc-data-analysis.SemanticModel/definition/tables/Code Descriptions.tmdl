@@ -1,0 +1,40 @@
+table 'Code Descriptions'
+	lineageTag: e16d4256-5c59-4c4d-8f88-defa5d760378
+
+	column _id
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f937aca-62fb-4df3-9082-9180fb31a138
+		summarizeBy: sum
+		sourceColumn: _id
+
+		annotation SummarizationSetBy = Automatic
+
+	column CODE
+		dataType: string
+		lineageTag: cbfe9802-b1c7-4f93-b39e-32291d16b27f
+		summarizeBy: none
+		sourceColumn: CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRIPTION
+		dataType: string
+		lineageTag: ace64a7a-70a8-4346-81d1-6abd6dea5fea
+		summarizeBy: none
+		sourceColumn: DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Code Descriptions' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Mohit\Documents\ttc-data-analysis\assets\Code Descriptions.csv"),[Delimiter=",", Columns=3, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"_id", Int64.Type}, {"CODE", type text}, {"DESCRIPTION", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

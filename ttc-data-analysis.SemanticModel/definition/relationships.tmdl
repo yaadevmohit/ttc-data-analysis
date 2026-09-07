@@ -1,0 +1,18 @@
+relationship 0c3a1d3b-1ba1-4de7-be14-7a89a5173618
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Delay Data after 2025'.Date
+	toColumn: LocalDateTable_cebcff8b-c479-4c6d-9b2e-e9cb42713e81.Date
+
+relationship fd95a932-bd10-8d9b-2fac-d4123a66caee
+	fromColumn: 'Delay Data after 2025'.Code
+	toColumn: 'Code Descriptions'.CODE
+
+relationship 6c3e33a1-ebf9-470d-af1b-be8964a51cb8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Delay Data 2024'.Date
+	toColumn: LocalDateTable_916980bc-1319-4045-9432-01e3b7749183.Date
+
+relationship 9bde4814-86f6-4626-314d-670152db6624
+	fromColumn: 'Delay Data 2024'.Code
+	toColumn: 'Code Descriptions'.CODE
+
