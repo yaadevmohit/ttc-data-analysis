@@ -1,0 +1,7 @@
+expression ProjectFolder = "C:\Users\Mohit\Documents\ttc-data-analysis\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 37014af5-f98a-4e67-8a76-fb6c6de4f60c
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

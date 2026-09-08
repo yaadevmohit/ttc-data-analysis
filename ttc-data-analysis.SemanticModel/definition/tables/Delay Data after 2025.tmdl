@@ -107,7 +107,7 @@ table 'Delay Data after 2025'
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\Mohit\Documents\ttc-data-analysis\assets\TTC Subway Delay Data since 2025.csv"),[Delimiter=",", Columns=11, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(File.Contents(ProjectFolder & "assets\TTC Subway Delay Data since 2025.csv"),[Delimiter=",", Columns=11, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"_id", Int64.Type}, {"Date", type date}, {"Time", type time}, {"Day", type text}, {"Station", type text}, {"Code", type text}, {"Min Delay", Int64.Type}, {"Min Gap", Int64.Type}, {"Bound", type text}, {"Line", type text}, {"Vehicle", Int64.Type}}),
 				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Year", each 2025),

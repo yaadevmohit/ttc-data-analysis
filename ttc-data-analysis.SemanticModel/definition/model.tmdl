@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["Delay Data after 2025","Code Descriptions","Delay Data 2024"]
+annotation PBI_QueryOrder = ["Delay Data after 2025","Code Descriptions","Delay Data 2024","ProjectFolder"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
