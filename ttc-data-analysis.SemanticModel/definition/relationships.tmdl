@@ -5,7 +5,7 @@ relationship 0c3a1d3b-1ba1-4de7-be14-7a89a5173618
 
 relationship fd95a932-bd10-8d9b-2fac-d4123a66caee
 	fromColumn: 'Main Table'.Code
-	toColumn: 'Code Descriptions'.CODE
+	toColumn: 'Code Descriptions'.Code
 
 relationship 6c3e33a1-ebf9-470d-af1b-be8964a51cb8
 	joinOnDateBehavior: datePartOnly
@@ -14,7 +14,7 @@ relationship 6c3e33a1-ebf9-470d-af1b-be8964a51cb8
 
 relationship 9bde4814-86f6-4626-314d-670152db6624
 	fromColumn: 'Delay Data 2024'.Code
-	toColumn: 'Code Descriptions'.CODE
+	toColumn: 'Code Descriptions'.Code
 
 relationship 371b610f-8ffd-46c2-85c9-38689d6897ba
 	joinOnDateBehavior: datePartOnly

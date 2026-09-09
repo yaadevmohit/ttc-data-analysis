@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "32fd880b52593633028d",
   "position": {
-    "x": 652.74900398406373,
-    "y": 322.54980079681275,
+    "x": 649.13099870298322,
+    "y": 323.73540856031133,
     "z": 3000,
-    "height": 396.49402390438246,
-    "width": 627.25099601593627,
+    "height": 396.78339818417641,
+    "width": 627.54863813229576,
     "tabOrder": 3000
   },
   "visual": {
@@ -24,7 +24,7 @@
                         "PropertyVariationSource": {
                           "Expression": {
                             "SourceRef": {
-                              "Entity": "Delays impacting service"
+                              "Entity": "Main Table"
                             }
                           },
                           "Name": "Variation",
@@ -37,7 +37,7 @@
                   "Level": "Year"
                 }
               },
-              "queryRef": "Delays impacting service.Date.Variation.Date Hierarchy.Year",
+              "queryRef": "Main Table.Date.Variation.Date Hierarchy.Year",
               "nativeQueryRef": "Date Year",
               "active": true
             },
@@ -50,7 +50,7 @@
                         "PropertyVariationSource": {
                           "Expression": {
                             "SourceRef": {
-                              "Entity": "Delays impacting service"
+                              "Entity": "Main Table"
                             }
                           },
                           "Name": "Variation",
@@ -63,34 +63,8 @@
                   "Level": "Quarter"
                 }
               },
-              "queryRef": "Delays impacting service.Date.Variation.Date Hierarchy.Quarter",
+              "queryRef": "Main Table.Date.Variation.Date Hierarchy.Quarter",
               "nativeQueryRef": "Date Quarter",
-              "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Delays impacting service"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
-                    }
-                  },
-                  "Level": "Month"
-                }
-              },
-              "queryRef": "Delays impacting service.Date.Variation.Date Hierarchy.Month",
-              "nativeQueryRef": "Date Month",
               "active": true
             }
           ]
@@ -104,7 +78,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Delays impacting service"
+                          "Entity": "Main Table"
                         }
                       },
                       "Property": "Incident_id"
@@ -113,8 +87,9 @@
                   "Function": 5
                 }
               },
-              "queryRef": "CountNonNull(Delays impacting service.Incident_id)",
-              "nativeQueryRef": "Count of Incident_id"
+              "queryRef": "CountNonNull(Main Table.Incident_id)",
+              "nativeQueryRef": "Number of Incidents",
+              "displayName": "Number of Incidents"
             }
           ]
         }
@@ -127,7 +102,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Number of Delays (2019-2026)'"
+                  "Value": "'Number of Delays by year'"
                 }
               }
             },

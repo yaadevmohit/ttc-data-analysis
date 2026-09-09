@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "6e263c3366e4335b50eb",
   "position": {
-    "x": 531.63346613545809,
-    "y": 114.7410358565737,
+    "x": 0,
+    "y": 115.86794462193822,
     "z": 1000,
-    "height": 130.0398406374502,
-    "width": 240.95617529880477,
+    "height": 192.20447284345047,
+    "width": 257.6357827476038,
     "tabOrder": 1000
   },
   "visual": {
@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Delays impacting service"
+                          "Entity": "Main Table"
                         }
                       },
                       "Property": "Incident_id"
@@ -31,7 +31,7 @@
                   "Function": 2
                 }
               },
-              "queryRef": "Min(Delays impacting service.Incident_id)",
+              "queryRef": "Min(Main Table.Incident_id)",
               "nativeQueryRef": "Count of Incident_id"
             }
           ]
@@ -46,7 +46,7 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "Delays impacting service"
+                        "Entity": "Main Table"
                       }
                     },
                     "Property": "Incident_id"
@@ -169,7 +169,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "0D"
                 }
               }
             },
@@ -187,7 +187,7 @@
             "width": {
               "expr": {
                 "Literal": {
-                  "Value": "4D"
+                  "Value": "6D"
                 }
               }
             }
@@ -236,5 +236,28 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e4d9cc1f902dd8302060",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Main Table"
+                  }
+                },
+                "Property": "Incident_id"
+              }
+            },
+            "Function": 2
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

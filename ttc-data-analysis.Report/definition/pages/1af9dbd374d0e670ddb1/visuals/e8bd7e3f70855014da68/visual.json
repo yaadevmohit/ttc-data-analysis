@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "f42d3bd2c16d63745b04",
+  "name": "e8bd7e3f70855014da68",
   "position": {
-    "x": 0,
-    "y": 323.06709265175715,
-    "z": 2000,
-    "height": 395.31416400425985,
-    "width": 640.68157614483493,
-    "tabOrder": 2000
+    "x": 429.98702983138782,
+    "y": 219.14396887159535,
+    "z": 0,
+    "height": 446.58884565499352,
+    "width": 594.34500648508435,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -23,11 +23,11 @@
                       "Entity": "Main Table"
                     }
                   },
-                  "Property": "Station"
+                  "Property": "Code"
                 }
               },
-              "queryRef": "Main Table.Station",
-              "nativeQueryRef": "Station",
+              "queryRef": "Main Table.Code",
+              "nativeQueryRef": "Code",
               "active": true
             }
           ]
@@ -51,8 +51,7 @@
                 }
               },
               "queryRef": "CountNonNull(Main Table.Incident_id)",
-              "nativeQueryRef": "Number of Incidents",
-              "displayName": "Number of Incidents"
+              "nativeQueryRef": "Count of Incident_id"
             }
           ]
         }
@@ -81,41 +80,12 @@
         "isDefaultSort": true
       }
     },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Stations with most number of delays'"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "16D"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "a15d38f00021ca648e5a",
+        "name": "94f1d64d55409abd7dba",
         "field": {
           "Column": {
             "Expression": {
@@ -123,7 +93,7 @@
                 "Entity": "Main Table"
               }
             },
-            "Property": "Station"
+            "Property": "Code"
           }
         },
         "type": "TopN",
@@ -151,7 +121,7 @@
                               "Source": "m"
                             }
                           },
-                          "Property": "Station"
+                          "Property": "Code"
                         },
                         "Name": "field"
                       }
@@ -200,7 +170,7 @@
                             "Source": "m"
                           }
                         },
-                        "Property": "Station"
+                        "Property": "Code"
                       }
                     }
                   ],

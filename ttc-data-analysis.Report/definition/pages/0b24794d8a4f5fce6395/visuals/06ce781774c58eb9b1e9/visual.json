@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "f42d3bd2c16d63745b04",
+  "name": "06ce781774c58eb9b1e9",
   "position": {
-    "x": 0,
-    "y": 323.06709265175715,
-    "z": 2000,
-    "height": 395.31416400425985,
-    "width": 640.68157614483493,
-    "tabOrder": 2000
+    "x": 657.10599078341011,
+    "y": 116.7926267281106,
+    "z": 6001,
+    "height": 192.29493087557603,
+    "width": 339.76036866359448,
+    "tabOrder": 6001
   },
   "visual": {
-    "visualType": "clusteredColumnChart",
+    "visualType": "donutChart",
     "query": {
       "queryState": {
         "Category": {
@@ -23,11 +23,11 @@
                       "Entity": "Main Table"
                     }
                   },
-                  "Property": "Station"
+                  "Property": "Line"
                 }
               },
-              "queryRef": "Main Table.Station",
-              "nativeQueryRef": "Station",
+              "queryRef": "Main Table.Line",
+              "nativeQueryRef": "Line",
               "active": true
             }
           ]
@@ -44,15 +44,14 @@
                           "Entity": "Main Table"
                         }
                       },
-                      "Property": "Incident_id"
+                      "Property": "Line"
                     }
                   },
                   "Function": 5
                 }
               },
-              "queryRef": "CountNonNull(Main Table.Incident_id)",
-              "nativeQueryRef": "Number of Incidents",
-              "displayName": "Number of Incidents"
+              "queryRef": "CountNonNull(Main Table.Line)",
+              "nativeQueryRef": "Count of Line"
             }
           ]
         }
@@ -69,7 +68,7 @@
                         "Entity": "Main Table"
                       }
                     },
-                    "Property": "Incident_id"
+                    "Property": "Line"
                   }
                 },
                 "Function": 5
@@ -81,28 +80,69 @@
         "isDefaultSort": true
       }
     },
+    "objects": {
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'BottomCenter'"
+                }
+              }
+            },
+            "showTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "visualContainerObjects": {
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
       "title": [
         {
           "properties": {
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Stations with most number of delays'"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "16D"
+                  "Value": "'Total Delays by Subway Lines'"
                 }
               }
             }
@@ -115,7 +155,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "a15d38f00021ca648e5a",
+        "name": "11e445fe1165d9b87647",
         "field": {
           "Column": {
             "Expression": {
@@ -123,7 +163,7 @@
                 "Entity": "Main Table"
               }
             },
-            "Property": "Station"
+            "Property": "Line"
           }
         },
         "type": "TopN",
@@ -151,7 +191,7 @@
                               "Source": "m"
                             }
                           },
-                          "Property": "Station"
+                          "Property": "Line"
                         },
                         "Name": "field"
                       }
@@ -168,7 +208,7 @@
                                     "Source": "m"
                                   }
                                 },
-                                "Property": "Incident_id"
+                                "Property": "Line"
                               }
                             },
                             "Function": 5
@@ -176,7 +216,7 @@
                         }
                       }
                     ],
-                    "Top": 5
+                    "Top": 3
                   }
                 }
               },
@@ -200,7 +240,7 @@
                             "Source": "m"
                           }
                         },
-                        "Property": "Station"
+                        "Property": "Line"
                       }
                     }
                   ],
