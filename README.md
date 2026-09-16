@@ -1,4 +1,4 @@
-# Welcome to the TTC Data Analysis README!
+# Welcome to the TTC Data Analysis!
 
 # Project Background
 The Toronto Transit Commission (TTC) operates one of the most heavily used public transit networks in North America, delivering hundreds of millions of passenger trips annually across its subway, streetcar, and bus systems. Maintaining schedule reliability, operational efficiency, and rider satisfaction requires continuous monitoring of service disruptions, mechanical incidents, and peak-hour network bottlenecks.
@@ -65,6 +65,7 @@ Across the **4.5-year evaluation period (2022 – June 2026)**, the TTC subway s
 
 # Recommendations
 
+* **Protective barriers installation:** Barriers need to installed at all the platforms with priorities given to busier stations.
 * **Eglinton Incident Response Optimization:** Address systemic bottlenecks at Eglinton Station to reduce its 3.49-minute average delay time down toward system averages (1.9–2.2 mins).
 * **Preventative Winter Maintenance:** Pre-deploy maintenance teams ahead of Q1 (January/February) to mitigate winter severity spikes.
 * **Capacity Management at Terminal Hubs:** Implement improved passenger flow control at Bloor, Finch, and Kennedy stations to minimize boarding-related delay triggers.
